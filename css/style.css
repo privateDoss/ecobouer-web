@@ -53,6 +53,20 @@ h6 {
   margin-right: 10px; /* Adds spacing to the text */
 }
 
+.service-box {
+  display: flex;
+  flex-direction: column; /* Stack the image above the text */
+  align-items: center; /* Center align the content */
+  text-align: center; /* Ensure text is centered */
+}
+
+.custom-icon2 {
+  width: 150px; /* Adjust size if needed */
+  height: 150px;
+  margin-bottom: 10px; /* Add spacing between image and text */
+}
+
+
 /* Back to top button */
 
 .back-to-top {
@@ -768,12 +782,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: 0.5s;
 }
 
-#services .title {
+/* #services .title {
   margin-left: 60px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
-}
+} */
 
 #services .title a {
   color: #111;
@@ -783,15 +797,65 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #18d26e;
 }
 
+#services .title {
+  margin-left: 0; /* Remove unnecessary left margin */
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
 #services .description {
   font-size: 14px;
-  margin-left: 60px;
+  margin-left: 0; /* Remove unnecessary left margin */
   line-height: 24px;
   margin-bottom: 0;
+  max-width: 90%; /* Prevents overly wide text */
 }
 
 /* Call To Action Section
 --------------------------------*/
+
+.calculator-form {
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.calculator-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff; /* Set labels to white */
+}
+
+.calculator-form input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#result {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  color: #222; /* Ensures all text inside #result is dark */
+}
+
+#solar-capacity,
+#panel-count {
+  color: #111; /* Even darker for better contrast */
+}
+
+#result strong {
+  color: #000; /* Ensures labels like "Capacity:" are bold and dark */
+}
+
+#result p {
+  color: #222; /* Applies dark color to all paragraphs inside #result */
+}
 
 #call-to-action {
   background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(0, 0, 0, 0.1)), url(../img/call-to-action-bg.jpg) fixed center center;
@@ -806,7 +870,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #call-to-action p {
-  color: #fff;
+  color: #222;
 }
 
 #call-to-action .cta-btn {
@@ -821,7 +885,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: 0.5s;
   margin-top: 10px;
   border: 2px solid #fff;
-  color: #fff;
+  color: #222;
 }
 
 #call-to-action .cta-btn:hover {
