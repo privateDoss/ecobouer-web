@@ -814,11 +814,44 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Call To Action Section
 --------------------------------*/
-
 .calculator-form {
-  max-width: 400px;
-  margin: 20px auto;
-  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-section, .result-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 15px;
+  text-align: center;
+}
+
+.result-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Adds space between the blocks */
+  justify-content: center;
+}
+
+.result-section {
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .calculator-form {
+    flex-direction: column;
+  }
+  .result-container {
+    flex-direction: column;
+  }
 }
 
 .calculator-form label {
@@ -857,23 +890,23 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #222; /* Applies dark color to all paragraphs inside #result */
 }
 
-#call-to-action {
+#savings-calculator {
   background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(0, 0, 0, 0.1)), url(../img/call-to-action-bg.jpg) fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
 
-#call-to-action h3 {
+#savings-calculator h3 {
   color: #fff;
   font-size: 28px;
   font-weight: 700;
 }
 
-#call-to-action p {
+#savings-calculator p {
   color: #222;
 }
 
-#call-to-action .cta-btn {
+#savings-calculator .cta-btn {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
@@ -888,7 +921,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #222;
 }
 
-#call-to-action .cta-btn:hover {
+#savings-calculator .cta-btn:hover {
   background: #18d26e;
   border: 2px solid #18d26e;
 }
@@ -1126,21 +1159,39 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Clients Section
 --------------------------------*/
-
-#clients {
-  padding: 60px 0;
+#clients .owl-carousel .owl-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Adds space around each logo */
 }
 
 #clients img {
   max-width: 100%;
   opacity: 0.5;
   transition: 0.3s;
-  padding: 15px 0;
+  padding: 15px; /* Increases space between images */
+  margin: 0 10px; /* Adds horizontal spacing */
 }
 
 #clients img:hover {
   opacity: 1;
 }
+
+/* #clients {
+  padding: 60px 0;
+} */
+
+/* #clients img {
+  max-width: 100%;
+  opacity: 0.5;
+  transition: 0.3s;
+  padding: 15px 0;
+} */
+
+/* #clients img:hover {
+  opacity: 1;
+} */
 
 #clients .owl-nav,
 #clients .owl-dots {

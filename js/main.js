@@ -222,23 +222,3 @@
   });
 
 })(jQuery);
-
-
-// function calculateSolar() {
-//   let monthlyBill = parseFloat(document.getElementById("monthly-bill").value);
-//   let electricRate = parseFloat(document.getElementById("electric-rate").value);
-
-//   if (isNaN(monthlyBill) || isNaN(electricRate) || monthlyBill <= 0 || electricRate <= 0) {
-//     alert("Please enter valid numbers.");
-//     return;
-//   }
-
-//   // Formula: Solar Capacity (kW) = (Monthly Bill / Electric Rate) / 30 / 5
-//   let solarCapacity = (monthlyBill / electricRate) / 30 / 5;
-//   let panelCount = Math.ceil((solarCapacity * 1000) / 400); // Assuming 400W panels
-
-//   // Update the result in the HTML
-//   document.getElementById("solar-capacity").textContent = solarCapacity.toFixed(2);
-//   document.getElementById("panel-count").textContent = panelCount;
-// }
-

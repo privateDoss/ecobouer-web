@@ -54,7 +54,7 @@
           <li class="menu-active"><a href="#intro">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#call-to-action">Solar Calculator</a></li>
+          <li><a href="#savings-calculator">Savings Calculator</a></li>
           <!-- <li><a href="#portfolio">Portfolio</a></li> -->
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li class="menu-has-children"><a href="">Drop Down</a>
@@ -88,7 +88,7 @@
               <div class="carousel-content">
                 <h2>Massive Long-Term Savings</h2>
                 <p>Solar energy lets you cut down on electricity bills and protect yourself from rising energy costs. Over time, your savings can add up to thousands, making it a smart financial choice.</p>
-                <a href="#call-to-action" class="btn-get-started scrollto">Calculate Now</a>
+                <a href="#savings-calculator" class="btn-get-started scrollto">Savings Calculator</a>
               </div>
             </div>
           </div>
@@ -99,7 +99,7 @@
               <div class="carousel-content">
                 <h2>Low Maintenance, High Value</h2>
                 <p>Once installed, solar panels require little to no upkeep. With durable materials and advanced technology, you get a hassle-free, long-lasting energy solution.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                <a href="#featured-services" class="btn-get-started scrollto">Savings Calculator</a>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@
               <div class="carousel-content">
                 <h2>Energy Independence</h2>
                 <p>Take control of your energy! By generating your own power, you reduce your dependence on the grid and avoid fluctuating utility rates.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                <a href="#featured-services" class="btn-get-started scrollto">Savings Calculator</a>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@
               <div class="carousel-content">
                 <h2>Worry-Free Installation & Warranty</h2>
                 <p>Our solar systems are designed to withstand harsh weather, and our warranties cover calamities—so you can enjoy peace of mind knowing your investment is protected.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                <a href="#featured-services" class="btn-get-started scrollto">Savings Calculator</a>
               </div>
             </div>
           </div>
@@ -132,7 +132,7 @@
               <div class="carousel-content">
                 <h2>Eco-Friendly & Future-Proof</h2>
                 <p>Going solar helps reduce your carbon footprint and contributes to a cleaner, greener planet. Solar power is 100% renewable, ensuring a sustainable future for generations to come.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                <a href="#featured-services" class="btn-get-started scrollto">Savings Calculator</a>
               </div>
             </div>
           </div>
@@ -295,29 +295,73 @@
     <!--==========================
       Call To Action Section
     ============================-->
-    <section id="call-to-action" class="wow fadeIn">
+    <section id="savings-calculator" class="wow fadeIn">
       <div class="container text-center">
         <h3>Solar System Calculator</h3>
         <p>Calculate the recommended solar system capacity based on your electricity bill.</p>
     
         <div class="calculator-form">
-          <label for="monthly-bill">Monthly Bill (PHP):</label>
-          <input type="number" id="monthly-bill" placeholder="Enter amount" required>
+          <div class="form-section">
+            <label for="monthly-bill">Monthly Bill (PHP):</label>
+            <input type="number" id="monthly-bill" placeholder="Enter amount" required>
     
-          <label for="electric-rate">Electric Rate (PHP/kWh):</label>
-          <input type="number" id="electric-rate" placeholder="Enter rate" required>
+            <label for="electric-rate">Electric Rate (PHP/kWh):</label>
+            <input type="number" id="electric-rate" value="10.5" placeholder="Enter rate" required>
     
-          <button id="calculate-btn" class="cta-btn">Calculate</button>
-
-          <div id="result">
-            <h4>Recommended Solar System</h4>
-            <p><strong>Capacity:</strong> <span id="solar-capacity">--</span> kW</p>
-            <!-- <p><strong>Number of Panels:</strong> <span id="panel-count">--</span></p> -->
+            <label for="net-metering">Net Metering:</label>
+            <select id="net-metering">
+              <option value="without">Without Net Metering</option>
+              <option value="with">With Net Metering</option>
+            </select>
+    
+            <button id="calculate-btn" class="cta-btn">Calculate</button>
+          </div>
+    
+          <div class="result-container">
+            <div class="result-section">
+              <h4>Grid-Tie System</h4>
+              <p><strong>Capacity:</strong> <span id="grid-solar-capacity">--</span> kW</p>
+              <p><strong>% Savings:</strong> <span id="grid-savings">--</span>%</p>
+              <p><strong>ROI:</strong> <span id="grid-roi">--</span></p>
+            </div>
+    
+            <div class="result-section">
+              <h4>Hybrid System</h4>
+              <p><strong>Capacity:</strong> <span id="hybrid-solar-capacity">--</span> kW</p>
+              <p><strong>% Savings:</strong> <span id="hybrid-savings">--</span>%</p>
+              <p><strong>ROI:</strong> <span id="hybrid-roi">--</span></p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- #call-to-action -->
+    
+    <script>
+      document.getElementById("calculate-btn").addEventListener("click", function () {
+        let monthlyBill = parseFloat(document.getElementById("monthly-bill").value);
+        let electricRate = parseFloat(document.getElementById("electric-rate").value);
+        let netMetering = document.getElementById("net-metering").value;
+    
+        if (isNaN(monthlyBill) || isNaN(electricRate) || monthlyBill <= 0 || electricRate <= 0) {
+          alert("Please enter valid numbers.");
+          return;
+        }
+    
+        let solarCapacity = Math.ceil((monthlyBill / electricRate) / 0.7 / 30 / 4);
+        let gridSavings = netMetering === "with" ? 90 : 70;
+        let hybridSavings = netMetering === "with" ? 95 : 85;
+        let gridROI = netMetering === "with" ? "Approx. 3.5 Years" : "Approx. 3 Years";
+        let hybridROI = netMetering === "with" ? "Approx. 5 Years" : "Approx. 4.5 Years";
+    
+        document.getElementById("grid-solar-capacity").textContent = solarCapacity.toFixed(2);
+        document.getElementById("hybrid-solar-capacity").textContent = solarCapacity.toFixed(2);
+        document.getElementById("grid-savings").textContent = gridSavings;
+        document.getElementById("hybrid-savings").textContent = hybridSavings;
+        document.getElementById("grid-roi").textContent = gridROI;
+        document.getElementById("hybrid-roi").textContent = hybridROI;
+      });
+    </script>
+    <!-- #savings-calculator -->
 
     <!--==========================
       Skills Section
@@ -594,7 +638,8 @@
         </div>
 
       </div>
-    </section><!-- #clients -->
+    </section>
+    <!-- #clients -->
 
     <!--==========================
       Clients Section
@@ -851,7 +896,7 @@
               <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#about">About us</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#services">Services</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#call-to-action">Solar Calculator</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#savings-calculator">Savings Calculator</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#contact">Cotact</a></li>
             </ul>
           </div>
@@ -868,7 +913,7 @@
 
             <div class="social-links">
               <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> -->
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.facebook.com/people/Ecobouer-Engineering/61570748378805/#" class="facebook"><i class="fa fa-facebook"></i></a>
               <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
               <!-- <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
               <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> -->
