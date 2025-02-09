@@ -203,22 +203,22 @@
     items: 1
   });
 
-  $(document).ready(function () {
-    $("#calculate-btn").click(function () {
-      let monthlyBill = parseFloat($("#monthly-bill").val());
-      let electricRate = parseFloat($("#electric-rate").val());
+  // $(document).ready(function () {
+  //   $("#calculate-btn").click(function () {
+  //     let monthlyBill = parseFloat($("#monthly-bill").val());
+  //     let electricRate = parseFloat($("#electric-rate").val());
   
-      if (isNaN(monthlyBill) || isNaN(electricRate) || monthlyBill <= 0 || electricRate <= 0) {
-        alert("Please enter valid numbers.");
-        return;
-      }
+  //     if (isNaN(monthlyBill) || isNaN(electricRate) || monthlyBill <= 0 || electricRate <= 0) {
+  //       alert("Please enter valid numbers.");
+  //       return;
+  //     }
   
-      let solarCapacity =Math.ceil((monthlyBill / electricRate)/0.7/30/4);
-      // let panelCount = Math.ceil((solarCapacity * 1000) / 400);
+  //     let solarCapacity =Math.ceil((monthlyBill / electricRate)/0.7/30/4);
+  //     // let panelCount = Math.ceil((solarCapacity * 1000) / 400);
   
-      $("#solar-capacity").text(solarCapacity.toFixed(2));
-      // $("#panel-count").text(panelCount);
-    });
-  });
+  //     $("#solar-capacity").text(solarCapacity.toFixed(2));
+  //     // $("#panel-count").text(panelCount);
+  //   });
+  // });
 
 })(jQuery);

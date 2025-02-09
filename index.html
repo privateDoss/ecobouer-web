@@ -347,7 +347,7 @@
           return;
         }
     
-        let solarCapacity = Math.ceil((monthlyBill / electricRate) / 0.7 / 30 / 4);
+        let solarCapacity = Math.ceil((monthlyBill / electricRate) / 0.75 / 30 / 4);
         let gridSavings = netMetering === "with" ? 90 : 70;
         let hybridSavings = netMetering === "with" ? 95 : 85;
         let gridROI = netMetering === "with" ? "Approx. 3.5 Years" : "Approx. 3 Years";

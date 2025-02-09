@@ -817,38 +817,98 @@ body.mobile-nav-active #mobile-nav-toggle {
 .calculator-form {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* Center the form on the page */
+  align-items: center;
+  gap: 20px; /* Space between form and results */
 }
 
-.form-section, .result-section {
+.form-section {
   flex: 1;
-  min-width: 300px;
-  padding: 15px;
+  min-width: 350px;
+  padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures all elements are centered */
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-section label {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff; /* Set labels to white */
+}
+
+.form-section input,
+.form-section select {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.form-section select,
+.form-section button {
+  width: 60%; /* Reduced width for better alignment */
+  margin-top: 10px; /* Space between dropdown and button */
+}
+
+#calculate-btn {
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+#calculate-btn:hover {
+  background: #18d26e;
+  border-color: #18d26e;
 }
 
 .result-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* Adds space between the blocks */
+  gap: 15px;
   justify-content: center;
 }
 
 .result-section {
-  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
   padding: 20px;
+  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.result-section h4 {
+  color: #0c4f21;
+  font-size: 22px;
+}
+
+.result-section p {
+  color: #000;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Responsive Fix */
 @media (max-width: 768px) {
   .calculator-form {
     flex-direction: column;
   }
+  
+  .form-section select,
+  .form-section button {
+    width: 80%; /* Make it more mobile-friendly */
+  }
+  
   .result-container {
     flex-direction: column;
   }
@@ -858,7 +918,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: block;
   font-weight: bold;
   margin-top: 10px;
-  color: #fff; /* Set labels to white */
+  color: #222; /* Set labels to white */
 }
 
 .calculator-form input {
@@ -874,7 +934,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 10px;
   background: #f8f9fa;
   border-radius: 5px;
-  color: #222; /* Ensures all text inside #result is dark */
+  color: #ccc; /* Ensures all text inside #result is dark */
 }
 
 #solar-capacity,
@@ -887,7 +947,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #result p {
-  color: #222; /* Applies dark color to all paragraphs inside #result */
+  color: #000; /* Applies dark color to all paragraphs inside #result */
 }
 
 #savings-calculator {
@@ -898,6 +958,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #savings-calculator h3 {
   color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+#savings-calculator h4 {
+  color: #0c4f21;
   font-size: 28px;
   font-weight: 700;
 }
