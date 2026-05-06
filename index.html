@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Assembled from partials/ — after editing a partial, run: ./build-page.sh -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -36,7 +37,6 @@
 </head>
 
 <body>
-
   <!--==========================
     Header
   ============================-->
@@ -70,7 +70,6 @@
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
-
   <!--==========================
     Intro Section
   ============================-->
@@ -152,9 +151,7 @@
       </div>
     </div>
   </section><!-- #intro -->
-
   <main id="main">
-
     <!--==========================
       Featured Services Section
     ============================-->
@@ -183,7 +180,6 @@
         </div>
       </div>
     </section><!-- #featured-services -->
-
     <!--==========================
       About Us Section
     ============================-->
@@ -244,7 +240,6 @@
 
       </div>
     </section><!-- #about -->
-
     <!--==========================
       Services Section
     ============================-->
@@ -291,8 +286,6 @@
 
       </div>
     </section><!-- #services -->
-
-    <!-- Add this section between Services and Savings Calculator in index.html -->
     <section id="projects" class="wow fadeInUp">
       <div class="container">
         <header class="section-header wow fadeInUp">
@@ -305,40 +298,6 @@
         </div>
       </div>
     </section>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const projectsDir = "img/ecobouer/projects/";
-        const projectNames = [
-          "Batangas Residential 6KW Hybrid Project",
-          "Balayan, Batangas Residential 6KW Hybrid Project",
-          "Mcdonalds Balayan 50KW Project",
-          "Mcdonalds Cuenca 22KW Project"
-        ];
-    
-        const galleryContainer = document.getElementById("project-gallery");
-    
-        projectNames.forEach(name => {
-          const projectPath = `${projectsDir}${name}`;
-          const projectHTML = `
-            <div class="col-12 project-block">
-              <h4 class="project-title">${name}</h4>
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="${projectPath}/1.jpg" class="img-fluid project-img mb-3" alt="${name} image 1">
-                </div>
-                <div class="col-md-6">
-                  <img src="${projectPath}/2.jpg" class="img-fluid project-img mb-3" alt="${name} image 2">
-                </div>
-              </div>
-            </div>
-          `;
-          galleryContainer.innerHTML += projectHTML;
-        });
-      });
-    </script>
-    
-      
     <!--==========================
       Call To Action Section
     ============================-->
@@ -382,35 +341,7 @@
         </div>
       </div>
     </section>
-    
-    <script>
-      document.getElementById("calculate-btn").addEventListener("click", function () {
-        let monthlyBill = parseFloat(document.getElementById("monthly-bill").value);
-        let electricRate = parseFloat(document.getElementById("electric-rate").value);
-        let netMetering = document.getElementById("net-metering").value;
-    
-        if (isNaN(monthlyBill) || isNaN(electricRate) || monthlyBill <= 0 || electricRate <= 0) {
-          alert("Please enter valid numbers.");
-          return;
-        }
-    
-        let solarCapacity = Math.ceil((monthlyBill / electricRate) / 0.75 / 30 / 4);
-        let gridSavings = netMetering === "with" ? 90 : 70;
-        let hybridSavings = netMetering === "with" ? 95 : 85;
-        let gridROI = netMetering === "with" ? "Approx. 3.5 Years" : "Approx. 3 Years";
-        let hybridROI = netMetering === "with" ? "Approx. 5 Years" : "Approx. 4.5 Years";
-    
-        document.getElementById("grid-solar-capacity").textContent = solarCapacity.toFixed(2);
-        document.getElementById("hybrid-solar-capacity").textContent = solarCapacity.toFixed(2);
-        document.getElementById("grid-savings").textContent = gridSavings;
-        document.getElementById("hybrid-savings").textContent = hybridSavings;
-        document.getElementById("grid-roi").textContent = gridROI;
-        document.getElementById("hybrid-roi").textContent = hybridROI;
-      });
-    </script>
     <!-- #savings-calculator -->
-
-
     <!--==========================
       Clients Section
     ============================-->
@@ -440,7 +371,6 @@
       </div>
     </section>
     <!-- #clients -->
-
     <!--==========================
       Clients Section
     ============================-->
@@ -603,7 +533,6 @@
       </div>
     </section> -->
     <!-- #team -->
-
     <!--==========================
       Contact Section
     ============================-->
@@ -674,9 +603,7 @@
 
       </div>
     </section><!-- #contact -->
-
   </main>
-
   <!--==========================
     Footer
   ============================-->
@@ -764,36 +691,9 @@
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
 
-<!-- Add this JS code at the bottom of main.js or in a new <script> tag below your other scripts -->
-  <!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("projects.php")
-        .then(response => response.json())
-        .then(projects => {
-          const galleryContainer = document.getElementById("project-gallery");
-  
-          projects.forEach(project => {
-            let imagesHTML = project.images.map(img => `
-              <div class="col-md-6">
-                <img src="${img}" class="img-fluid mb-3" alt="${project.name}">
-              </div>
-            `).join("");
-  
-            const projectHTML = `
-              <div class="col-12 mb-5">
-                <h4 class="project-title">${project.name}</h4>
-                <div class="row">${imagesHTML}</div>
-              </div>
-            `;
-  
-            galleryContainer.innerHTML += projectHTML;
-          });
-        })
-        .catch(error => {
-          console.error("Error loading projects:", error);
-        });
-    });
-  </script> -->
+  <!-- Page feature scripts (projects gallery, savings calculator) -->
+  <script src="js/projects-gallery.js"></script>
+  <script src="js/savings-calculator.js"></script>
 
 </body>
 </html>
