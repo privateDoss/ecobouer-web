@@ -1,0 +1,635 @@
+/*
+ * Ecobouer — minimalist overlay theme (Buskowitz-inspired layout)
+ * Brand: forest green, black, white (aligned with logo)
+ */
+
+:root {
+  --eco-green: #1f6b2f;
+  --eco-green-dark: #165524;
+  --eco-green-light: #2d8a42;
+  --eco-black: #0d0d0d;
+  --eco-text: #3d3d3d;
+  --eco-muted: #6b6b6b;
+  --eco-line: rgba(0, 0, 0, 0.08);
+  --eco-surface: #f7f8f7;
+  --eco-radius: 4px;
+  --eco-shadow: 0 12px 40px rgba(13, 13, 13, 0.08);
+  --eco-font: "Inter", "Open Sans", sans-serif;
+  --eco-heading: "Montserrat", sans-serif;
+}
+
+body {
+  color: var(--eco-text);
+  font-family: var(--eco-font);
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--eco-heading);
+  color: var(--eco-black);
+}
+
+a {
+  color: var(--eco-green);
+}
+
+a:hover,
+a:focus {
+  color: var(--eco-green-dark);
+}
+
+/* --- Header (minimal, Buskowitz-like) --- */
+
+#header.eco-header {
+  padding: 18px 0;
+  height: auto;
+  background: transparent;
+}
+
+#header.eco-header.header-scrolled {
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 1px 0 var(--eco-line);
+  padding: 12px 0;
+  height: auto !important;
+}
+
+#header.eco-header #logo {
+  display: flex;
+  align-items: center;
+}
+
+#header.eco-header .site-logo-link {
+  display: inline-block;
+  line-height: 0;
+  border: none;
+  padding: 0;
+}
+
+#header.eco-header .site-logo--header {
+  height: 46px;
+  width: auto;
+  max-width: min(280px, 56vw);
+  object-fit: contain;
+}
+
+#header.eco-header.header-scrolled .nav-menu > li > a,
+#header.eco-header.header-scrolled #mobile-nav ul li a {
+  color: var(--eco-black) !important;
+}
+
+#header.eco-header.header-scrolled .nav-menu > li:hover > a,
+#header.eco-header.header-scrolled .nav-menu > .menu-active > a {
+  color: var(--eco-green) !important;
+}
+
+#header.eco-header .nav-menu > li > a {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  padding: 8px 12px 10px;
+  color: #fff;
+}
+
+#header.eco-header .nav-menu li:hover > a,
+#header.eco-header .nav-menu > .menu-active > a {
+  color: var(--eco-green-light) !important;
+}
+
+#header.eco-header #mobile-nav-toggle {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#header.eco-header.header-scrolled #mobile-nav-toggle {
+  color: var(--eco-black);
+  background: var(--eco-surface);
+  border-color: var(--eco-line);
+}
+
+/* --- Hero --- */
+
+#intro .carousel-item::before {
+  background-color: rgba(13, 13, 13, 0.55);
+}
+
+#intro .eco-hero-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+}
+
+#intro h2 {
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#intro p {
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+#intro .eco-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+#intro .eco-hero-actions .btn-get-started,
+#intro .eco-hero-actions .btn-eco-outline {
+  width: 230px;
+  height: 48px;
+  padding: 0 20px;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+#intro .btn-get-started {
+  background: var(--eco-green);
+  border-radius: var(--eco-radius);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+#intro .btn-get-started:hover {
+  background: #fff;
+  color: var(--eco-green-dark);
+}
+
+#intro .btn-eco-outline {
+  font-family: var(--eco-heading);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--eco-radius);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  color: #fff;
+  transition: 0.25s;
+}
+
+#intro .btn-eco-outline:hover {
+  background: #fff;
+  color: var(--eco-black);
+  border-color: #fff;
+}
+
+#intro .carousel-control-prev-icon,
+#intro .carousel-control-next-icon {
+  opacity: 0.65;
+}
+
+/* --- Section rhythm --- */
+
+.eco-section {
+  padding: 72px 0;
+}
+
+.eco-section--surface {
+  background: var(--eco-surface);
+}
+
+.eco-section-head .eco-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eco-muted);
+  margin-bottom: 8px;
+}
+
+.eco-section-head h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.eco-section-head p,
+.section-header p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--eco-muted);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eco-lead {
+  font-size: 18px !important;
+}
+
+/* Featured / services visual cleanup */
+
+#featured-services {
+  padding: 56px 0 48px;
+  border-bottom: 1px solid var(--eco-line);
+}
+
+#featured-services .box {
+  padding: 24px 16px;
+  transition: transform 0.25s;
+}
+
+#featured-services .box:hover {
+  transform: translateY(-4px);
+}
+
+#services,
+#about {
+  background: #fff;
+}
+
+#clients.section-bg,
+#contact.section-bg {
+  background: var(--eco-surface) !important;
+}
+
+/* Savings calculator — card shell */
+
+#savings-calculator {
+  padding: 72px 0 !important;
+}
+
+#savings-calculator h3 {
+  font-size: 28px;
+}
+
+#savings-calculator .calculator-form {
+  max-width: 920px;
+  margin: 32px auto 0;
+  padding: 32px;
+  background: #fff;
+  border-radius: var(--eco-radius);
+  box-shadow: var(--eco-shadow);
+  border: 1px solid var(--eco-line);
+}
+
+#savings-calculator .cta-btn {
+  background: var(--eco-green);
+  border-radius: var(--eco-radius);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 13px;
+  padding: 12px 32px;
+}
+
+#savings-calculator .cta-btn:hover {
+  background: var(--eco-green-dark);
+}
+
+/* --- Projects: filters + cards --- */
+
+.project-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.project-filters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid var(--eco-line);
+  border-radius: 999px;
+}
+
+.project-filter-btn {
+  border: 0;
+  background: transparent;
+  color: var(--eco-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.project-filter-btn:hover {
+  color: var(--eco-black);
+}
+
+.project-filter-btn.active {
+  background: var(--eco-green);
+  color: #fff;
+}
+
+.project-card-col {
+  margin-bottom: 28px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: var(--eco-radius);
+  overflow: hidden;
+  border: 1px solid var(--eco-line);
+  box-shadow: 0 4px 24px rgba(13, 13, 13, 0.06);
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.project-card:hover,
+.project-card:focus {
+  box-shadow: var(--eco-shadow);
+  transform: translateY(-4px);
+  outline: none;
+}
+
+.project-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--eco-black);
+}
+
+.project-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.92;
+  transition: opacity 0.25s, transform 0.35s;
+}
+
+.project-card:hover .project-card__media img {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.project-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--eco-black);
+}
+
+.project-card__body {
+  padding: 20px 20px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.35;
+  color: var(--eco-black);
+}
+
+.project-card__meta {
+  margin: 0;
+  font-size: 13px;
+  color: var(--eco-muted);
+}
+
+.project-card__cta {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--eco-green);
+}
+
+/* Modal detail gallery */
+
+.eco-modal .modal-content {
+  border: none;
+  border-radius: var(--eco-radius);
+  box-shadow: var(--eco-shadow);
+}
+
+.eco-modal .modal-header {
+  border-bottom: 1px solid var(--eco-line);
+  padding: 20px 24px;
+}
+
+.eco-modal .modal-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.eco-modal .modal-body {
+  padding: 24px;
+}
+
+.eco-modal .project-modal-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--eco-green);
+  margin-bottom: 16px;
+}
+
+.eco-modal .project-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.eco-modal .project-modal-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid var(--eco-line);
+}
+
+/* --- Footer --- */
+
+#footer .footer-top {
+  background: var(--eco-black);
+  padding: 56px 0 40px;
+}
+
+#footer .footer-info h3,
+#footer h4 {
+  color: #fff;
+  font-weight: 700;
+}
+
+#footer .footer-info p,
+#footer .footer-links a,
+#footer .footer-contact p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+#footer .footer-links a:hover {
+  color: #fff;
+}
+
+#footer .footer-brand-logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+#footer .social-links a {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#footer .social-links a:hover {
+  background: var(--eco-green);
+}
+
+#footer .copyright {
+  padding: 20px 0;
+  font-size: 13px;
+  color: var(--eco-muted);
+}
+
+/* Back to top */
+
+.back-to-top {
+  background: var(--eco-green);
+}
+
+.back-to-top:hover {
+  background: var(--eco-green-dark);
+}
+
+/* Utilities */
+
+.text-eco-muted {
+  color: var(--eco-muted) !important;
+}
+
+@media (max-width: 991px) {
+  #header.eco-header .site-logo--header {
+    height: 40px;
+  }
+
+  .eco-section {
+    padding: 56px 0;
+  }
+}
+
+/* --- Featured strip (template default was black-on-black) --- */
+
+#featured-services {
+  background: var(--eco-surface) !important;
+}
+
+#featured-services .box-bg {
+  background: #fff !important;
+  background-image: none !important;
+  border: 1px solid var(--eco-line);
+  box-shadow: 0 8px 30px rgba(13, 13, 13, 0.06);
+}
+
+#featured-services h4 a {
+  color: var(--eco-black) !important;
+}
+
+#featured-services h4 a:hover {
+  color: var(--eco-green) !important;
+}
+
+#featured-services p {
+  color: var(--eco-muted) !important;
+}
+
+/* --- Section titles: sentence case, cleaner underline --- */
+
+.section-header h3 {
+  text-transform: none;
+  letter-spacing: -0.02em;
+}
+
+.section-header h3::after {
+  background: var(--eco-green) !important;
+}
+
+/* --- About cards accent --- */
+
+#about .about-col .icon {
+  background-color: var(--eco-green) !important;
+}
+
+/* --- Calculator: light minimal panel (overrides photo bg + white labels) --- */
+
+#savings-calculator {
+  background: var(--eco-surface) !important;
+}
+
+#savings-calculator h3 {
+  color: var(--eco-black) !important;
+}
+
+#savings-calculator > .container > p {
+  color: var(--eco-muted);
+}
+
+.form-section label {
+  color: var(--eco-text) !important;
+}
+
+.form-section {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.result-section {
+  background: #fafbfa !important;
+  border: 1px solid var(--eco-line) !important;
+  box-shadow: none !important;
+}
+
+.result-section h4 {
+  color: var(--eco-green-dark) !important;
+}
+
+.result-section p {
+  color: var(--eco-text) !important;
+}
+
+/* --- Partners carousel: quieter logos --- */
+
+#clients .clients-carousel img {
+  filter: grayscale(1);
+  opacity: 0.65;
+  transition: opacity 0.25s, filter 0.25s;
+}
+
+#clients .clients-carousel img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}

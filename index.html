@@ -3,17 +3,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ECOBOUER ENGINEERING</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <title>Ecobouer Engineering | Solar &amp; Electrical Solutions — Batangas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ecobouer Energy and Construction: grid-tie, hybrid, and off-grid solar installations, engineering, and electrical services in Batangas and nearby areas.">
 
   <!-- Favicons -->
   <link href="img/ecobouer/main-logo.png" rel="icon">
   <link href="img/ecobouer/main-logo.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +26,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/ecobouer-theme.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: BizPage
@@ -40,13 +40,13 @@
   <!--==========================
     Header
   ============================-->
-  <header id="header">
+  <header id="header" class="eco-header">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">ECOBOUER ENGINEERING</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        <a href="#intro" class="scrollto site-logo-link" title="Ecobouer">
+          <img src="img/ecobouer/main-logo.png" alt="Ecobouer Energy and Construction Corporation" class="site-logo site-logo--header" width="280" height="46">
+        </a>
       </div>
 
       <nav id="nav-menu-container">
@@ -55,16 +55,7 @@
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#savings-calculator">Savings Calculator</a></li>
-          <!-- <li><a href="#team">Team</a></li> -->
-          <!-- <li class="menu-has-children"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li> -->
+          <li><a href="#savings-calculator">Calculator</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
@@ -85,9 +76,13 @@
             <div class="carousel-background"><img src="img/ecobouer/carousel/fact-bg1.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Massive Long-Term Savings</h2>
-                <p>Solar energy lets you cut down on electricity bills and protect yourself from rising energy costs. Over time, your savings can add up to thousands, making it a smart financial choice.</p>
-                <a href="#savings-calculator" class="btn-get-started scrollto">Savings Calculator</a>
+                <span class="eco-hero-eyebrow">Renewable energy · Batangas &amp; beyond</span>
+                <h2>Discover a Life Powered by the Sun</h2>
+                <p>Sustainable solar and electrical solutions for homes and businesses—engineered for savings, built to last.</p>
+                <div class="eco-hero-actions">
+                  <a href="#savings-calculator" class="btn-get-started scrollto">Solar calculator</a>
+                  <a href="#contact" class="btn-eco-outline scrollto">Talk to us</a>
+                </div>
               </div>
             </div>
           </div>
@@ -98,7 +93,10 @@
               <div class="carousel-content">
                 <h2>Low Maintenance, High Value</h2>
                 <p>Once installed, solar panels require little to no upkeep. With durable materials and advanced technology, you get a hassle-free, long-lasting energy solution.</p>
-                <a href="#savings-calculator" class="btn-get-started scrollto">Savings Calculator</a>
+                <div class="eco-hero-actions">
+                  <a href="#projects" class="btn-get-started scrollto">View projects</a>
+                  <a href="#contact" class="btn-eco-outline scrollto">Get a quote</a>
+                </div>
               </div>
             </div>
           </div>
@@ -109,7 +107,10 @@
               <div class="carousel-content">
                 <h2>Energy Independence</h2>
                 <p>Take control of your energy! By generating your own power, you reduce your dependence on the grid and avoid fluctuating utility rates.</p>
-                <a href="#savings-calculator" class="btn-get-started scrollto">Savings Calculator</a>
+                <div class="eco-hero-actions">
+                  <a href="#services" class="btn-get-started scrollto">Our services</a>
+                  <a href="#contact" class="btn-eco-outline scrollto">Talk to us</a>
+                </div>
               </div>
             </div>
           </div>
@@ -118,9 +119,12 @@
             <div class="carousel-background"><img src="img/ecobouer/carousel/fact-bg4.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Worry-Free Installation & Warranty</h2>
+                <h2>Worry-Free Installation &amp; Warranty</h2>
                 <p>Our solar systems are designed to withstand harsh weather, and our warranties cover calamities—so you can enjoy peace of mind knowing your investment is protected.</p>
-                <a href="#savings-calculator" class="btn-get-started scrollto">Savings Calculator</a>
+                <div class="eco-hero-actions">
+                  <a href="#about" class="btn-get-started scrollto">Why Ecobouer</a>
+                  <a href="#contact" class="btn-eco-outline scrollto">Contact</a>
+                </div>
               </div>
             </div>
           </div>
@@ -129,9 +133,12 @@
             <div class="carousel-background"><img src="img/ecobouer/carousel/fact-bg5.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Eco-Friendly & Future-Proof</h2>
+                <h2>Eco-Friendly &amp; Future-Proof</h2>
                 <p>Going solar helps reduce your carbon footprint and contributes to a cleaner, greener planet. Solar power is 100% renewable, ensuring a sustainable future for generations to come.</p>
-                <a href="#savings-calculator" class="btn-get-started scrollto">Savings Calculator</a>
+                <div class="eco-hero-actions">
+                  <a href="#savings-calculator" class="btn-get-started scrollto">Solar calculator</a>
+                  <a href="#projects" class="btn-eco-outline scrollto">See our work</a>
+                </div>
               </div>
             </div>
           </div>
@@ -155,7 +162,7 @@
     <!--==========================
       Featured Services Section
     ============================-->
-    <section id="featured-services">
+    <section id="featured-services" class="eco-section">
       <div class="container">
         <div class="row">
 
@@ -183,10 +190,11 @@
     <!--==========================
       About Us Section
     ============================-->
-    <section id="about">
+    <section id="about" class="eco-section">
       <div class="container">
 
-        <header class="section-header">
+        <header class="section-header eco-section-head text-center">
+          <p class="eco-eyebrow">Who we are</p>
           <h3>About Us</h3>
           <p>At <b>Ecobouer Engineering</b>, we are committed to making <b>solar energy accessible to everyone</b>—not just as an alternative power source, but as a <b>smart investment that reduces electricity costs and promotes a greener future</b>.
 
@@ -243,10 +251,11 @@
     <!--==========================
       Services Section
     ============================-->
-    <section id="services">
+    <section id="services" class="eco-section eco-section--surface">
       <div class="container">
 
-        <header class="section-header wow fadeInUp">
+        <header class="section-header eco-section-head text-center wow fadeInUp">
+          <p class="eco-eyebrow">What we offer</p>
           <h3>Services</h3>
           <p>We provide comprehensive engineering and electrical solutions for both households and commercial establishments. Our expertise covers a wide range of electrical needs, with a primary focus on <b>solar energy systems</b> to help you achieve efficient and <b>sustainable power solutions</b>.</p>
         </header>
@@ -277,34 +286,54 @@
           </div>
         </div>
 
-        <header class="section-header wow fadeInUp">
-          <p>We are committed to delivering high-quality solar solutions tailored to your energy needs.<br> 
-            <b>Let us help you switch to clean, renewable energy today!</b>
+        <div class="text-center mt-5 pt-4 wow fadeInUp">
+          <p class="eco-lead mb-0">We are committed to delivering high-quality solar solutions tailored to your energy needs.<br>
+            <strong>Let us help you switch to clean, renewable energy today!</strong>
           </p>
-          
-        </header>
+        </div>
 
       </div>
     </section><!-- #services -->
-    <section id="projects" class="wow fadeInUp">
+    <section id="projects" class="eco-section eco-section--surface wow fadeInUp">
       <div class="container">
-        <header class="section-header wow fadeInUp">
+        <header class="section-header eco-section-head text-center wow fadeInUp">
+          <p class="eco-eyebrow">Portfolio</p>
           <h3>Projects</h3>
-          <p>Take a look at some of our recent installations and engineering work.</p>
+          <p class="eco-lead">Recent PV installations and electrical work across Batangas and nearby areas. Filter by sector or open a project for full photos.</p>
         </header>
 
-        <div id="project-gallery" class="row">
-          <!-- Projects will be injected here dynamically -->
+        <div class="project-toolbar mb-4">
+          <div id="project-filters" class="project-filters" role="group" aria-label="Filter projects by category"></div>
         </div>
+
+        <div id="project-gallery" class="row justify-content-center"></div>
       </div>
     </section>
+
+    <div class="modal fade eco-modal" id="projectDetailModal" tabindex="-1" role="dialog" aria-labelledby="projectModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <div id="projectModalTag" class="project-modal-tag"></div>
+              <h5 class="modal-title mb-0" id="projectModalTitle"></h5>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="projectModalBody"></div>
+        </div>
+      </div>
+    </div>
     <!--==========================
       Call To Action Section
     ============================-->
-    <section id="savings-calculator" class="wow fadeIn">
+    <section id="savings-calculator" class="eco-section wow fadeIn">
       <div class="container text-center">
+        <p class="eco-eyebrow">Tools</p>
         <h3>Solar System Calculator</h3>
-        <p>Calculate the recommended solar system capacity based on your electricity bill.</p>
+        <p class="eco-lead text-eco-muted">Estimate recommended system size from your monthly bill and local rate.</p>
     
         <div class="calculator-form">
           <div class="form-section">
@@ -345,11 +374,12 @@
     <!--==========================
       Clients Section
     ============================-->
-    <section id="clients" class="wow fadeInUp">
+    <section id="clients" class="eco-section wow fadeInUp">
       <div class="container">
 
-        <header class="section-header">
-          <h3>OUR PARTNERS</h3>
+        <header class="section-header eco-section-head text-center">
+          <p class="eco-eyebrow">Trusted brands</p>
+          <h3>Our partners</h3>
         </header>
 
         <div class="owl-carousel clients-carousel">
@@ -536,10 +566,11 @@
     <!--==========================
       Contact Section
     ============================-->
-    <section id="contact" class="section-bg wow fadeInUp">
+    <section id="contact" class="eco-section section-bg wow fadeInUp">
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-header eco-section-head text-center">
+          <p class="eco-eyebrow">Get in touch</p>
           <h3>Contact Us</h3>
           <p>Ready to switch to solar? Contact us today for a free quotation and consultation. Whether you have questions or need a custom solar solution, our team is here to help every step of the way!</p>
         </div>
@@ -558,8 +589,7 @@
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+63 9154844713</a><br>
-                <a href="tel:+155895548855">+63 9567293872</a>
+              <p><a href="tel:+155895548855">+63 9561924938</a><br>
               </p>
               
             </div>
@@ -610,14 +640,15 @@
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
-        <div class="row">
+        <div class="row align-items-start">
 
-          <div class="col-lg-3 col-md-6 footer-info">
-            <h3>Ecobouer</h3>
-            <p>Providing high-quality solar solutions for homes and businesses, helping you save on electricity while promoting a greener future.</p>
+          <div class="col-lg-4 col-md-6 footer-info">
+            <img src="img/ecobouer/main-logo.png" alt="Ecobouer" class="footer-brand-logo mb-3" width="120" height="120">
+            <h3>Ecobouer Engineering</h3>
+            <p>Energy and construction solutions—specializing in solar PV for homes and businesses across Batangas and nearby provinces.</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
@@ -628,7 +659,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-4 col-md-12 footer-contact">
             <h4>Contact Us</h4>
             <p>
               Balayan <br>
@@ -662,7 +693,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>Ecobouer Engineering</strong>. All Rights Reserved
+        &copy; Ecobouer Energy and Construction Corporation. All rights reserved.
       </div>
     </div>
   </footer><!-- #footer -->

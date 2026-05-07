@@ -1,12 +1,32 @@
-    <section id="projects" class="wow fadeInUp">
+    <section id="projects" class="eco-section eco-section--surface wow fadeInUp">
       <div class="container">
-        <header class="section-header wow fadeInUp">
+        <header class="section-header eco-section-head text-center wow fadeInUp">
+          <p class="eco-eyebrow">Portfolio</p>
           <h3>Projects</h3>
-          <p>Take a look at some of our recent installations and engineering work.</p>
+          <p class="eco-lead">Recent PV installations and electrical work across Batangas and nearby areas. Filter by sector or open a project for full photos.</p>
         </header>
 
-        <div id="project-gallery" class="row">
-          <!-- Projects will be injected here dynamically -->
+        <div class="project-toolbar mb-4">
+          <div id="project-filters" class="project-filters" role="group" aria-label="Filter projects by category"></div>
         </div>
+
+        <div id="project-gallery" class="row justify-content-center"></div>
       </div>
     </section>
+
+    <div class="modal fade eco-modal" id="projectDetailModal" tabindex="-1" role="dialog" aria-labelledby="projectModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <div id="projectModalTag" class="project-modal-tag"></div>
+              <h5 class="modal-title mb-0" id="projectModalTitle"></h5>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="projectModalBody"></div>
+        </div>
+      </div>
+    </div>
